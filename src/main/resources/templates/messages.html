@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Messages</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <h1>Messages</h1>
+
+        <ul>
+            <li th:each="viesti : ${viestit}">
+                <span th:text="${viesti.getTeksti}"
+            </li>
+        </ul>
+
+        <h2>Add new message</h2>
+
+        <form method="POST" action="/messages">
+            <input type="text" name="content"/><br/>
+            <input type="submit" value="Add!"/>
+        </form>
+        
+        <h2>
+            <a th:href="@{~/etusivu}">
+                Back to the main page
+            </a>
+        </h2>
+    </body>
+</html>
